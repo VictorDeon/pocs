@@ -1,8 +1,10 @@
 from httpx import Client
+from pokes import pokes
 
 
 def main(pokemon: str) -> None:
     with Client(base_url="https://pokeapi.co/api/v2", timeout=5.0) as client:
+        print(f"Pokemon: {pokemon}")
         response = client.get(f'/pokemon/{pokemon}')
         result = response.json()
         _id = result.get("id")
@@ -18,13 +20,5 @@ def main(pokemon: str) -> None:
 
 
 if __name__ == '__main__':
-    pokemons = [
-        'gastly',
-        'magikarp',
-        'charmander',
-        'abra',
-        'geodude',
-        'eevee'
-    ]
-    for poke in pokemons:
+    for poke in pokes:
         main(poke)

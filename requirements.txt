@@ -1,2 +1,4 @@
 locust==2.32.4
 httpx==0.28.1
+# Testes automatizados mocks de httpx
+respx==0.22.0
