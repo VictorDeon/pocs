@@ -1,6 +1,6 @@
 from locust import User, task, between
 import asyncio
-from requests.async_request import run_tasks
+from http_requests.async_request import run_tasks
 
 
 class LoadTesting(User):
