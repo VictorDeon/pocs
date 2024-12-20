@@ -1,9 +1,11 @@
 from locust import User, task, between
+import asyncio
+from requests.async_request import run_tasks
 
 
 class LoadTesting(User):
     @task
     def load_test_task(self):
-        print("executing my_task")
+        asyncio.run(run_tasks(10))
 
-    wait_time = between(0.5, 10)
+    wait_time = between(1, 3)
