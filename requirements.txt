@@ -2,3 +2,5 @@ locust==2.32.4
 httpx==0.28.1
 # Testes automatizados mocks de httpx
 respx==0.22.0
+# Controle de async
+aiometer==0.5.0
